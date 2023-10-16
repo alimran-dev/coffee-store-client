@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      rancho: ['Rancho', 'cursive'],
+    },
     extend: {},
   },
   plugins: [],
