@@ -1,5 +1,6 @@
 import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AddCoffee = () => {
   const handleAdd = (e) => {
@@ -22,7 +23,17 @@ const AddCoffee = () => {
       body: JSON.stringify(newCoffee),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        form.reset();
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Coffee added successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
   };
   return (
     <div className="px-24">
