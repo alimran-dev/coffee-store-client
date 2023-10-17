@@ -6,30 +6,33 @@ import UpdateCoffee from "../pages/UpdateCoffee/UpdateCoffee";
 import ViewDetails from "../pages/ViewDetails/ViewDetails";
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Root />,
-        children: [
-            {
-                path: '/',
-                element: <Home />,
-                loader: ()=>fetch("http://localhost:5000/coffees")
-            },
-            {
-                path: '/addCoffee',
-                element: <AddCoffee/>,
-            },
-            {
-                path: '/updateCoffee',
-                element: <UpdateCoffee/>,
-            },
-            {
-                path: '/details/:id',
-                element: <ViewDetails />,
-                loader: ({params})=>fetch(`http://localhost:5000/coffees/${params.id}`)
-            }
-        ]
-    }
-])
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+        loader: () => fetch("http://localhost:5000/coffees"),
+      },
+      {
+        path: "/addCoffee",
+        element: <AddCoffee />,
+      },
+      {
+        path: "/updateCoffee/:id",
+        element: <UpdateCoffee />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/coffees/${params.id}`),
+      },
+      {
+        path: "/details/:id",
+        element: <ViewDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/coffees/${params.id}`),
+      },
+    ],
+  },
+]);
 
 export default router;

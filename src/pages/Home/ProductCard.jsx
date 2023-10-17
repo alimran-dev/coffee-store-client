@@ -40,7 +40,7 @@ const ProductCard = ({ coffee }) => {
   return (
     <div className="flex gap-2 justify-around items-center bg-[#F5F4F1] rounded-md">
       <div>
-        <img src="/images/1.png" alt="" />
+        <img src={photo} alt="" />
       </div>
       <div className="pr-5">
         <p className="text-[#1B1A1A] text-lg">
@@ -60,7 +60,10 @@ const ProductCard = ({ coffee }) => {
         >
           <AiFillEye />
         </button>
-        <button className="bg-[#3C393B] text-2xl text-white p-3 rounded-md">
+        <button
+          onClick={() => navigate(`/updateCoffee/${_id}`)}
+          className="bg-[#3C393B] text-2xl text-white p-3 rounded-md"
+        >
           <FaPen />
         </button>
         <button
