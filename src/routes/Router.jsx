@@ -13,7 +13,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/coffees"),
+        loader: () =>
+          fetch("https://coffee-store-server-ten-coral.vercel.app/coffees"),
       },
       {
         path: "/addCoffee",
@@ -23,13 +24,17 @@ const router = createBrowserRouter([
         path: "/updateCoffee/:id",
         element: <UpdateCoffee />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/coffees/${params.id}`),
+          fetch(
+            `https://coffee-store-server-ten-coral.vercel.app/coffees/${params.id}`
+          ),
       },
       {
         path: "/details/:id",
         element: <ViewDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/coffees/${params.id}`),
+          fetch(
+            `https://coffee-store-server-ten-coral.vercel.app/coffees/${params.id}`
+          ),
       },
     ],
   },
