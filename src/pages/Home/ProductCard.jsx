@@ -38,11 +38,11 @@ const ProductCard = ({ coffee }) => {
     });
   };
   return (
-    <div className="flex gap-2 justify-around items-center bg-[#F5F4F1] rounded-md">
-      <div>
+    <div className="flex gap-2 justify-around items-center bg-[#F5F4F1] rounded-md p-5">
+      <div className="w-1/3">
         <img src={photo} alt="" />
       </div>
-      <div className="pr-5">
+      <div className="pr-5 flex-grow">
         <p className="text-[#1B1A1A] text-lg">
           <span className="text-black font-semibold">Name: </span> {name}
         </p>
